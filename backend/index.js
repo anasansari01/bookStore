@@ -8,6 +8,16 @@ const app = express();
 
 app.use(express.json());
 
+//Middleware for handling the CORS POLICY
+// OPTION 1: Allow all origin with Default  of cors(*)
+app.use(cors());
+
+// app.use(cors({
+//   origin: 'http://localhost:3000',
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ['Content-Type'],
+// }));
+
 app.get("/", (req, res) => {
   console.log(req);
   return res.status(200).send("Welcome to MY BOOK STORE.");
